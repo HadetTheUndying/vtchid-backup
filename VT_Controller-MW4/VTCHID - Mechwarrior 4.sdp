@@ -1,0 +1,1255 @@
+;;;; -*- coding: utf-8; -*-
+;;;; S-expression Device Profile
+
+(profile
+ (name . "VTCHID - Mechwarrior 4")
+ )
+
+(parameter
+ (button
+  (threshold . #x80)
+  )
+
+ (axis
+  (lower-threshold . #x10)
+  (upper-threshold . #xef)
+  )
+
+ (modifier
+  (initial . #x0000)
+  )
+
+ (light
+  (auto . 1)
+  (slowly-off-speed . 79)
+  )
+ )
+
+(action-list
+ ("null action"
+  )
+
+ ("axis X motion"
+  (joystick ratio x 225 255 15)
+  )
+
+ ("axis Y motion"
+  (joystick ratio y 175 255 40)
+  )
+
+ ("axis RX motion"
+  (joystick ratio rx 225 255 15)
+  )
+
+ ("axis RY motion"
+  (joystick ratio ry 225 255 15)
+  )
+
+ ("axis RZ motion"
+  (joystick ratio rz 175 255 40)
+  )
+
+ ("axis Z 0/6"
+  (joystick specify z 235)
+  )
+
+ ("axis Z 1/6"
+  (joystick specify z 210)
+  )
+
+ ("axis Z 2/6"
+  (joystick specify z 168)
+  )
+
+ ("axis Z 3/6"
+  (joystick specify z 127)
+  )
+
+ ("axis Z 4/6"
+  (joystick specify z 85)
+  )
+
+ ("axis Z 5/6"
+  (joystick specify z 42)
+  )
+
+ ("axis Z 6/6"
+  (joystick specify z 10)
+  )
+
+ ("axis Slider 0/15"
+  (modifier #x0000 #x0080)
+  )
+
+ ("axis Slider 1/15"
+  )
+
+ ("axis Slider 2/15"
+  (modifier #x0080 #x0080)
+  )
+
+ ("axis Slider 3/15"
+  )
+
+ ("axis Slider 4/15"
+  )
+
+ ("axis Slider 5/15"
+  )
+
+ ("axis Slider 6/15"
+  )
+
+ ("axis Slider 7/15"
+  )
+
+ ("axis Slider 8/15"
+  )
+
+ ("axis Slider 9/15"
+  )
+
+ ("axis Slider 10/15"
+  )
+
+ ("axis Slider 11/15"
+  )
+
+ ("axis Slider 12/15"
+  )
+
+ ("axis Slider 13/15"
+  )
+
+ ("axis Slider 14/15"
+  )
+
+ ("axis Slider 15/15"
+  )
+
+ ("button 6 press"
+  (keyboard press #x0016)
+  )
+
+ ("button 6 release"
+  (keyboard release #x0016)
+  )
+
+ ("button 7 press"
+  (keyboard press #x0012)
+  )
+
+ ("button 7 release"
+  (keyboard release #x0012)
+  )
+
+ ("button 8 press"
+  (keyboard press #x0011)
+  )
+
+ ("button 8 release"
+  (keyboard release #x0011)
+  )
+
+ ("button 9 press"
+  (keyboard press #x0015)
+  )
+
+ ("button 9 release"
+  (keyboard release #x0015)
+  )
+
+ ("button 10 press"
+  (keyboard press #x00e0)
+  (modifier #x0000 #x0000)
+  (keyboard press #x0015)
+  )
+
+ ("button 10 release"
+  (keyboard release #x00e0)
+  (modifier #x0000 #x0000)
+  (keyboard release #x0015)
+  )
+
+ ("button 11 press"
+  (keyboard press #x00e1)
+  (modifier #x0000 #x0000)
+  (keyboard press #x0010)
+  )
+
+ ("button 11 release"
+  (keyboard release #x00e1)
+  (modifier #x0000 #x0000)
+  (keyboard release #x0010)
+  )
+
+ ("button 12 press"
+  (keyboard press #x0062)
+  )
+
+ ("button 12 release"
+  (keyboard release #x0062)
+  )
+
+ ("button 13 press"
+  (keyboard press #x0062)
+  )
+
+ ("button 13 release"
+  (keyboard release #x0062)
+  )
+
+ ("button 14 press"
+  (keyboard press #x00e2)
+  (modifier #x0000 #x0000)
+  (keyboard press #x000b)
+  )
+
+ ("button 14 release"
+  (keyboard release #x00e2)
+  (modifier #x0000 #x0000)
+  (keyboard release #x000b)
+  )
+
+ ("button 15 press"
+  (joystick maximum (button 15))
+  )
+
+ ("button 15 release"
+  (joystick minimum (button 15))
+  )
+
+ ("button 16 press"
+  (keyboard press #x000f)
+  )
+
+ ("button 16 release"
+  (keyboard release #x000f)
+  )
+
+ ("button 17 press"
+  (keyboard press #x002c)
+  )
+
+ ("button 17 release"
+  (keyboard release #x002c)
+  )
+
+ ("button 18 press"
+  (keyboard press #x0009)
+  )
+
+ ("button 18 release"
+  (keyboard release #x0009)
+  )
+
+ ("button 19 press"
+  (keyboard press #x0013)
+  )
+
+ ("button 19 release"
+  (keyboard release #x0013)
+  )
+
+ ("button 20 press"
+  (keyboard press #x002b)
+  )
+
+ ("button 20 release"
+  (keyboard release #x002b)
+  )
+
+ ("button 21 press"
+  (keyboard press #x00e1)
+  (modifier #x0000 #x0000)
+  (keyboard press #x0012)
+  )
+
+ ("button 21 release"
+  (keyboard release #x00e1)
+  (modifier #x0000 #x0000)
+  (keyboard release #x0012)
+  )
+
+ ("button 22 press"
+  (keyboard press #x0004)
+  )
+
+ ("button 22 release"
+  (keyboard release #x0004)
+  )
+
+ ("button 23 press"
+  (keyboard press #x0008)
+  )
+
+ ("button 23 release"
+  (keyboard release #x0008)
+  )
+
+ ("button 24 press"
+  (keyboard press #x00e0)
+  (modifier #x0000 #x0000)
+  (keyboard press #x0008)
+  )
+
+ ("button 24 release"
+  (keyboard release #x00e0)
+  (modifier #x0000 #x0000)
+  (keyboard release #x0008)
+  )
+
+ ("button 25 press"
+  (keyboard press #x001a)
+  )
+
+ ("button 25 release"
+  (keyboard release #x001a)
+  )
+
+ ("button 26 press"
+  (keyboard press #x0030)
+  )
+
+ ("button 26 release"
+  (keyboard release #x0030)
+  )
+
+ ("button 27 press"
+  (keyboard press #x002f)
+  )
+
+ ("button 27 release"
+  (keyboard release #x002f)
+  )
+
+ ("button 28 press"
+  (keyboard press #x0031)
+  )
+
+ ("button 28 release"
+  (keyboard release #x0031)
+  )
+
+ ("modifier 1 on"
+  (apply #x0000 #x0080 "comm 1")
+  (apply #x0080 #x0080 "comm 6")
+  )
+
+ ("modifier 1 off"
+  (apply #x0000 #x0080 "comm 1 release")
+  (apply #x0080 #x0080 "comm 6 release")
+  )
+
+ ("modifier 2 on"
+  (apply #x0000 #x0080 "comm 2")
+  (apply #x0080 #x0080 "comm 7")
+  )
+
+ ("modifier 2 off"
+  (apply #x0000 #x0080 "comm 2 release")
+  (apply #x0080 #x0080 "comm 7 release")
+  )
+
+ ("modifier 3 on"
+  (apply #x0000 #x0080 "comm 3")
+  (apply #x0080 #x0080 "comm 8")
+  )
+
+ ("modifier 3 off"
+  (apply #x0000 #x0080 "comm 3 release")
+  (apply #x0080 #x0080 "comm 8 release")
+  )
+
+ ("modifier 4 on"
+  (apply #x0000 #x0080 "comm 4")
+  (apply #x0080 #x0080 "comm 9")
+  )
+
+ ("modifier 4 off"
+  (apply #x0000 #x0080 "comm 4 release")
+  (apply #x0080 #x0080 "comm 9 release")
+  )
+
+ ("modifier 5 on"
+  (apply #x0000 #x0080 "comm 5")
+  (apply #x0080 #x0080 "comm 10")
+  )
+
+ ("modifier 5 off"
+  (apply #x0000 #x0080 "comm 5 release")
+  (apply #x0080 #x0080 "comm 10 release")
+  )
+
+ ("button 29 press"
+  (keyboard press #x0062)
+  )
+
+ ("button 29 release"
+  (keyboard release #x0062)
+  )
+
+ ("modifier 6 on"
+  (modifier #x0020 #x0020)
+  )
+
+ ("modifier 6 off"
+  (modifier #x0000 #x0020)
+  )
+
+ ("modifier 7 on"
+  (modifier #x0040 #x0040)
+  )
+
+ ("modifier 7 off"
+  (modifier #x0000 #x0040)
+  )
+
+ ("modifier 8 on"
+  (keyboard press #x000d)
+  )
+
+ ("modifier 8 off"
+  (keyboard release #x000d)
+  )
+
+ ("modifier 9 on"
+  (keyboard press #x0036)
+  (delay 3)
+  (keyboard release #x0036)
+  )
+
+ ("modifier 9 off"
+  (keyboard press #x0037)
+  (delay 3)
+  (keyboard release #x0037)
+  )
+
+ ("modifier 10 on"
+  (keyboard press #x000a)
+  (delay 3)
+  (keyboard release #x000a)
+  )
+
+ ("modifier 10 off"
+  (keyboard press #x0006)
+  (delay 3)
+  (keyboard release #x0006)
+  )
+
+ ("button 30 press"
+  (keyboard press #x001e)
+  )
+
+ ("button 30 release"
+  (keyboard release #x001e)
+  )
+
+ ("button 31 press"
+  (keyboard press #x002d)
+  )
+
+ ("button 31 release"
+  (keyboard release #x002d)
+  )
+
+ ("button 32 press"
+  (keyboard press #x002e)
+  )
+
+ ("button 32 release"
+  (keyboard release #x002e)
+  )
+
+ ("alpha strike"
+  (keyboard press #x0049)
+  (keyboard press #x004a)
+  (keyboard press #x004b)
+  (keyboard press #x004e)
+  (keyboard press #x004d)
+  (keyboard press #x004c)
+  )
+
+ ("alpha strike release"
+  (keyboard release #x0049)
+  (keyboard release #x004a)
+  (keyboard release #x004b)
+  (keyboard release #x004e)
+  (keyboard release #x004d)
+  (keyboard release #x004c)
+  )
+
+ ("fire selected group/weapon"
+  (keyboard press #x0028)
+  )
+
+ ("fire selected group/weapon release"
+  (keyboard release #x0028)
+  )
+
+ ("fire group 1"
+  (keyboard press #x0049)
+  )
+
+ ("fire group 1 release"
+  (keyboard release #x0049)
+  )
+
+ ("fire group 2"
+  (keyboard press #x004a)
+  )
+
+ ("fire group 2 release"
+  (keyboard release #x004a)
+  )
+
+ ("fire group 3"
+  (keyboard press #x004b)
+  )
+
+ ("fire group 3 release"
+  (keyboard release #x004b)
+  )
+
+ ("fire group 4"
+  (keyboard press #x004c)
+  )
+
+ ("fire group 4 release"
+  (keyboard release #x004c)
+  )
+
+ ("fire group 5"
+  (keyboard press #x004d)
+  )
+
+ ("fire group 5 release"
+  (keyboard release #x004d)
+  )
+
+ ("fire group 6"
+  (keyboard press #x004e)
+  )
+
+ ("fire group 6 release"
+  (keyboard release #x004e)
+  )
+
+ ("comm 1"
+  (keyboard press #x003a)
+  )
+
+ ("comm 1 release"
+  (keyboard release #x003a)
+  )
+
+ ("comm 2"
+  (keyboard press #x003b)
+  )
+
+ ("comm 2 release"
+  (keyboard release #x003b)
+  )
+
+ ("comm 3"
+  (keyboard press #x003c)
+  )
+
+ ("comm 3 release"
+  (keyboard release #x003c)
+  )
+
+ ("comm 4"
+  (keyboard press #x003d)
+  )
+
+ ("comm 4 release"
+  (keyboard release #x003d)
+  )
+
+ ("comm 5"
+  (keyboard press #x003e)
+  )
+
+ ("comm 5 release"
+  (keyboard release #x003e)
+  )
+
+ ("comm 6"
+  (keyboard press #x003f)
+  )
+
+ ("comm 6 release"
+  (keyboard release #x003f)
+  )
+
+ ("comm 7"
+  (keyboard press #x0040)
+  )
+
+ ("comm 7 release"
+  (keyboard release #x0040)
+  )
+
+ ("comm 8"
+  (keyboard press #x0041)
+  )
+
+ ("comm 8 release"
+  (keyboard release #x0041)
+  )
+
+ ("comm 9"
+  (keyboard press #x0042)
+  )
+
+ ("comm 9 release"
+  (keyboard release #x0042)
+  )
+
+ ("comm 10"
+  (keyboard press #x0043)
+  )
+
+ ("comm 10 release"
+  (keyboard release #x0043)
+  )
+
+ ("toggle group firing mode"
+  (keyboard press #x00e5)
+  (delay 3)
+  (keyboard press #x0006)
+  )
+
+ ("toggle group firing mode release"
+  (keyboard release #x00e5)
+  (keyboard release #x0006)
+  )
+
+ ("change firing mode"
+  (keyboard press #x0031)
+  )
+
+ ("change firing mode release"
+  (keyboard release #x0031)
+  )
+
+ ("center torso to waist"
+  (keyboard press #x002c)
+  )
+
+ ("center torso to waist release"
+  (keyboard release #x002c)
+  )
+
+ ("center waist to torso"
+  (keyboard press #x00e5)
+  (delay 3)
+  (keyboard press #x002c)
+  )
+
+ ("center waist to torso release"
+  (keyboard release #x00e5)
+  (keyboard release #x002c)
+  )
+
+ ("eject"
+  (keyboard press #x00e4)
+  (delay 3)
+  (keyboard press #x001d)
+  )
+
+ ("eject release"
+  (keyboard release #x00e4)
+  (keyboard release #x001d)
+  )
+
+ ("accelerate"
+  (keyboard press #x002e)
+  )
+
+ ("accelerate release"
+  (keyboard release #x002e)
+  )
+
+ ("decelerate"
+  (keyboard press #x002d)
+  )
+
+ ("decelerate release"
+  (keyboard release #x002d)
+  )
+
+ ("toggle forward/reverse"
+  (keyboard press #x002a)
+  )
+
+ ("toggle forward/reverse release"
+  (keyboard release #x002a)
+  )
+
+ ("throttle: stop"
+  (keyboard press #x001e)
+  )
+
+ ("throttle: stop release"
+  (keyboard release #x001e)
+  )
+
+ ("throttle: 20%"
+  (keyboard press #x001f)
+  )
+
+ ("throttle: 20% release"
+  (keyboard release #x001f)
+  )
+
+ ("throttle: 30%"
+  (keyboard press #x0020)
+  )
+
+ ("throttle: 30% release"
+  (keyboard release #x0020)
+  )
+
+ ("throttle: 40%"
+  (keyboard press #x0021)
+  )
+
+ ("throttle: 40% release"
+  (keyboard release #x0021)
+  )
+
+ ("throttle: 50%"
+  (keyboard press #x0022)
+  )
+
+ ("throttle: 50% release"
+  (keyboard release #x0022)
+  )
+
+ ("throttle: 60%"
+  (keyboard press #x0023)
+  )
+
+ ("throttle: 60% release"
+  (keyboard release #x0023)
+  )
+
+ ("throttle: 70%"
+  (keyboard press #x0024)
+  )
+
+ ("throttle: 70% release"
+  (keyboard release #x0024)
+  )
+
+ ("throttle: 80%"
+  (keyboard press #x0025)
+  )
+
+ ("throttle: 80% release"
+  (keyboard release #x0025)
+  )
+
+ ("throttle: 90%"
+  (keyboard press #x0026)
+  )
+
+ ("throttle: 90% release"
+  (keyboard release #x0026)
+  )
+
+ ("throttle: 100%"
+  (keyboard press #x0027)
+  )
+
+ ("throttle: 100% release"
+  (keyboard release #x0027)
+  )
+
+ ("jump jets"
+  (keyboard press #x000d)
+  )
+
+ ("jump jets release"
+  (keyboard release #x000d)
+  )
+
+ ("zoom in/out"
+  (keyboard press #x0062)
+  )
+
+ ("zoom in/out release"
+  (keyboard release #x0062)
+  )
+
+ ("target obj under reticule"
+  (keyboard press #x0014)
+  )
+
+ ("target obj under reticule release"
+  (keyboard release #x0014)
+  )
+
+ ("target next enemy"
+  (keyboard press #x0008)
+  )
+
+ ("target next enemy release"
+  (keyboard release #x0008)
+  )
+
+ ("target previous enemy"
+  (keyboard press #x00e0)
+  (delay 3)
+  (keyboard press #x0008)
+  )
+
+ ("target previous enemy release"
+  (keyboard release #x00e0)
+  (keyboard release #x0008)
+  )
+
+ ("target nearest enemy"
+  (keyboard press #x00e1)
+  (delay 3)
+  (keyboard press #x0008)
+  )
+
+ ("target nearest enemy release"
+  (keyboard release #x00e1)
+  (keyboard release #x0008)
+  )
+
+ ("change view"
+  (keyboard press #x0019)
+  )
+
+ ("change view release"
+  (keyboard release #x0019)
+  )
+
+ ("shutdown/startup"
+  (keyboard press #x0016)
+  )
+
+ ("shutdown/startup release"
+  (keyboard release #x0016)
+  )
+
+ ("shutdown"
+  (keyboard press #x001b)
+  )
+
+ ("shutdown release"
+  (keyboard release #x001b)
+  )
+
+ ("startup"
+  (keyboard press #x0005)
+  )
+
+ ("startup release"
+  (keyboard release #x0005)
+  )
+
+ ("crouch"
+  (keyboard press #x0006)
+  )
+
+ ("crouch release"
+  (keyboard release #x0006)
+  )
+
+ ("stand up"
+  (keyboard press #x000a)
+  )
+
+ ("stand up release"
+  (keyboard release #x000a)
+  )
+
+ ("flush coolant"
+  (keyboard press #x0009)
+  )
+
+ ("flush coolant release"
+  (keyboard release #x0009)
+  )
+
+ ("look: down"
+  (keyboard press #x0010)
+  )
+
+ ("look: down release"
+  (keyboard release #x0010)
+  )
+
+ ("look: back"
+  (keyboard press #x000c)
+  )
+
+ ("look: back release"
+  (keyboard release #x000c)
+  )
+
+ )
+
+(event
+ (motion
+  (aiming-lever-x
+   (#x0000 #x0000 "axis RZ motion")
+   )
+  (aiming-lever-y
+   (#x0000 #x0000 "axis Y motion")
+   )
+  (sight-change-x
+   (#x0000 #x0000 "axis RX motion")
+   )
+  (sight-change-y
+   (#x0000 #x0000 "axis RY motion")
+   )
+  (rotation-lever
+   (#x0000 #x0000 "axis X motion")
+   )
+  )
+
+ (press
+  (gear-lever-r
+   (#x0000 #x0000 "axis Z 0/6")
+   )
+  (gear-lever-n
+   (#x0000 #x0000 "axis Z 1/6")
+   )
+  (gear-lever-1
+   (#x0000 #x0000 "axis Z 2/6")
+   )
+  (gear-lever-2
+   (#x0000 #x0000 "axis Z 3/6")
+   )
+  (gear-lever-3
+   (#x0000 #x0000 "axis Z 4/6")
+   )
+  (gear-lever-4
+   (#x0000 #x0000 "axis Z 5/6")
+   )
+  (gear-lever-5
+   (#x0000 #x0000 "axis Z 6/6")
+   )
+  (tuner-dial-e
+   (#x0000 #x0000 "axis Slider 0/15")
+   )
+  (tuner-dial-ene
+   (#x0000 #x0000 "axis Slider 1/15")
+   )
+  (tuner-dial-ne
+   (#x0000 #x0000 "axis Slider 2/15")
+   )
+  (tuner-dial-nne
+   (#x0000 #x0000 "axis Slider 3/15")
+   )
+  (tuner-dial-n
+   (#x0000 #x0000 "axis Slider 4/15")
+   )
+  (tuner-dial-nnw
+   (#x0000 #x0000 "axis Slider 5/15")
+   )
+  (tuner-dial-nw
+   (#x0000 #x0000 "axis Slider 6/15")
+   )
+  (tuner-dial-wnw
+   (#x0000 #x0000 "axis Slider 7/15")
+   )
+  (tuner-dial-w
+   (#x0000 #x0000 "axis Slider 8/15")
+   )
+  (tuner-dial-wsw
+   (#x0000 #x0000 "axis Slider 9/15")
+   )
+  (tuner-dial-sw
+   (#x0000 #x0000 "axis Slider 10/15")
+   )
+  (tuner-dial-ssw
+   (#x0000 #x0000 "axis Slider 11/15")
+   )
+  (tuner-dial-s
+   (#x0000 #x0000 "axis Slider 12/15")
+   )
+  (tuner-dial-sse
+   (#x0000 #x0000 "axis Slider 13/15")
+   )
+  (tuner-dial-se
+   (#x0000 #x0000 "axis Slider 14/15")
+   )
+  (tuner-dial-ese
+   (#x0000 #x0000 "axis Slider 15/15")
+   )
+  (main-weapon
+   (#x0040 #x0040 "fire group 4")
+   (#x0000 #x0040 "fire group 3")
+   )
+  (sub-weapon
+   (#x0020 #x0020 "alpha strike")
+   (#x0000 #x0020 "fire selected group/weapon")
+   )
+  (lock-on
+   (#x0000 #x0000 "target obj under reticule")
+   )
+  (eject-cmd
+   (#x0000 #x0000 "eject")
+   )
+  (cocpit-hatch
+   (#x0000 #x0000 "change view")
+   )
+  (ignition
+   (#x0000 #x0000 "shutdown/startup")
+   )
+  (start
+   (#x0000 #x0000 "button 7 press")
+   )
+  (multimonitor-open/close
+   (#x0000 #x0000 "button 8 press")
+   )
+  (multimonitor-map-zoom-in/out
+   (#x0000 #x0000 "button 9 press")
+   )
+  (multimonitor-mode-select
+   (#x0000 #x0000 "button 10 press")
+   )
+  (submonitor-mode-select
+   (#x0000 #x0000 "button 11 press")
+   )
+  (mainmonitor-zoom-in
+   (#x0000 #x0000 "button 12 press")
+   )
+  (mainmonitor-zoom-out
+   (#x0000 #x0000 "button 13 press")
+   )
+  (fss
+   (#x0000 #x0000 "button 14 press")
+   )
+  (manipulator
+   (#x0000 #x0000 "change firing mode")
+   )
+  (line-color-change
+   (#x0000 #x0000 "button 16 press")
+   )
+  (washing
+   (#x0000 #x0000 "center torso to waist")
+   )
+  (extinguisher
+   (#x0000 #x0000 "button 18 press")
+   )
+  (chaff
+   (#x0000 #x0000 "button 19 press")
+   )
+  (tank-detach
+   (#x0000 #x0000 "button 20 press")
+   )
+  (override
+   (#x0000 #x0000 "button 21 press")
+   )
+  (night-scope
+   (#x0000 #x0000 "button 22 press")
+   )
+  (f1
+   (#x0000 #x0000 "button 23 press")
+   )
+  (f2
+   (#x0000 #x0000 "button 24 press")
+   )
+  (f3
+   (#x0000 #x0000 "button 25 press")
+   )
+  (weapon-control-main
+   (#x0000 #x0000 "button 26 press")
+   )
+  (weapon-control-sub
+   (#x0000 #x0000 "button 27 press")
+   )
+  (weapon-control-magazine-change
+   (#x0000 #x0000 "toggle group firing mode")
+   )
+  (communication-button-1
+   (#x0000 #x0000 "modifier 1 on")
+   )
+  (communication-button-2
+   (#x0000 #x0000 "modifier 2 on")
+   )
+  (communication-button-3
+   (#x0000 #x0000 "modifier 3 on")
+   )
+  (communication-button-4
+   (#x0000 #x0000 "modifier 4 on")
+   )
+  (communication-button-5
+   (#x0000 #x0000 "modifier 5 on")
+   )
+  (sight-change-button
+   (#x0000 #x0000 "button 29 press")
+   )
+  (filt-control-system
+   (#x0000 #x0000 "modifier 6 on")
+   )
+  (oxygen-supply-system
+   (#x0000 #x0000 "modifier 7 on")
+   )
+  (fuel-flow-rate
+   (#x0000 #x0000 "modifier 8 on")
+   )
+  (buffer-material
+   (#x0000 #x0000 "modifier 9 on")
+   )
+  (vt-location-measurement
+   (#x0000 #x0000 "modifier 10 on")
+   )
+  )
+
+ (release
+  (main-weapon
+   (#x0040 #x0040 "fire group 4 release")
+   (#x0000 #x0040 "fire group 3 release")
+   )
+  (sub-weapon
+   (#x0020 #x0020 "alpha strike release")
+   (#x0000 #x0020 "fire selected group/weapon release")
+   )
+  (lock-on
+   (#x0000 #x0000 "target obj under reticule release")
+   )
+  (eject-cmd
+   (#x0000 #x0000 "eject release")
+   )
+  (cocpit-hatch
+   (#x0000 #x0000 "change view release")
+   )
+  (ignition
+   (#x0000 #x0000 "shutdown/startup release")
+   )
+  (start
+   (#x0000 #x0000 "button 7 release")
+   )
+  (multimonitor-open/close
+   (#x0000 #x0000 "button 8 release")
+   )
+  (multimonitor-map-zoom-in/out
+   (#x0000 #x0000 "button 9 release")
+   )
+  (multimonitor-mode-select
+   (#x0000 #x0000 "button 10 release")
+   )
+  (submonitor-mode-select
+   (#x0000 #x0000 "button 11 release")
+   )
+  (mainmonitor-zoom-in
+   (#x0000 #x0000 "button 12 release")
+   )
+  (mainmonitor-zoom-out
+   (#x0000 #x0000 "button 13 release")
+   )
+  (fss
+   (#x0000 #x0000 "button 14 release")
+   )
+  (manipulator
+   (#x0000 #x0000 "change firing mode release")
+   )
+  (line-color-change
+   (#x0000 #x0000 "button 16 release")
+   )
+  (washing
+   (#x0000 #x0000 "center torso to waist release")
+   )
+  (extinguisher
+   (#x0000 #x0000 "button 18 release")
+   )
+  (chaff
+   (#x0000 #x0000 "button 19 release")
+   )
+  (tank-detach
+   (#x0000 #x0000 "button 20 release")
+   )
+  (override
+   (#x0000 #x0000 "button 21 release")
+   )
+  (night-scope
+   (#x0000 #x0000 "button 22 release")
+   )
+  (f1
+   (#x0000 #x0000 "button 23 release")
+   )
+  (f2
+   (#x0000 #x0000 "button 24 release")
+   )
+  (f3
+   (#x0000 #x0000 "button 25 release")
+   )
+  (weapon-control-main
+   (#x0000 #x0000 "button 26 release")
+   )
+  (weapon-control-sub
+   (#x0000 #x0000 "button 27 release")
+   )
+  (weapon-control-magazine-change
+   (#x0000 #x0000 "toggle group firing mode release")
+   )
+  (communication-button-1
+   (#x0000 #x0000 "modifier 1 off")
+   )
+  (communication-button-2
+   (#x0000 #x0000 "modifier 2 off")
+   )
+  (communication-button-3
+   (#x0000 #x0000 "modifier 3 off")
+   )
+  (communication-button-4
+   (#x0000 #x0000 "modifier 4 off")
+   )
+  (communication-button-5
+   (#x0000 #x0000 "modifier 5 off")
+   )
+  (sight-change-button
+   (#x0000 #x0000 "button 29 release")
+   )
+  (filt-control-system
+   (#x0000 #x0000 "modifier 6 off")
+   )
+  (oxygen-supply-system
+   (#x0000 #x0000 "modifier 7 off")
+   )
+  (fuel-flow-rate
+   (#x0000 #x0000 "modifier 8 off")
+   )
+  (buffer-material
+   (#x0000 #x0000 "modifier 9 off")
+   )
+  (vt-location-measurement
+   (#x0000 #x0000 "modifier 10 off")
+   )
+  )
+
+ (lower-in
+  (sight-change-y
+   (#x0000 #x0000 "look: down")
+   )
+  )
+
+ (lower-out
+  (sight-change-y
+   (#x0000 #x0000 "look: down release")
+   )
+  )
+
+ (upper-in
+  (sight-change-y
+   (#x0000 #x0000 "look: back")
+   )
+  )
+
+ (upper-out
+  (sight-change-y
+   (#x0000 #x0000 "look: back release")
+   )
+  )
+
+ )
