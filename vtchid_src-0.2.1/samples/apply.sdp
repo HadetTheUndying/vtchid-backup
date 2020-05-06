@@ -1,0 +1,108 @@
+;;;; -*- coding: utf-8; -*-
+;;;; S-expression Device Profile
+
+(profile
+ (name . "apply")
+ )
+
+(parameter
+ (button
+  (threshold . #x80)
+  )
+
+ (axis
+  (lower-threshold . #x10)
+  (upper-threshold . #xef)
+  )
+
+ (modifier
+  (initial . #x0000)
+  )
+
+ (light
+  (auto . 1)
+  (slowly-off-speed . 20)
+  )
+ )
+
+(action-list
+ ("button 9/10 press/release"
+  (joystick maximum (button 9))
+  (delay 1000)
+  (joystick minimum (button 9))
+  (apply #x0000 #x0000 "button 10 press/release")
+  )
+
+ ("button 10 press/release"
+  (joystick maximum (button 10))
+  (delay 1000)
+  (joystick minimum (button 10))
+  )
+
+ ("button 1-8 press/release"
+  (modifier #x0000 #x0001)
+  (joystick maximum (button 1))
+  (delay 500)
+  (joystick minimum (button 1))
+  (joystick maximum (button 2))
+  (delay 500)
+  (joystick minimum (button 2))
+  (joystick maximum (button 3))
+  (delay 500)
+  (joystick minimum (button 3))
+  (joystick maximum (button 4))
+  (delay 500)
+  (joystick minimum (button 4))
+  (joystick maximum (button 5))
+  (delay 500)
+  (joystick minimum (button 5))
+  (joystick maximum (button 6))
+  (delay 500)
+  (joystick minimum (button 6))
+  (joystick maximum (button 7))
+  (delay 500)
+  (joystick minimum (button 7))
+  (joystick maximum (button 8))
+  (delay 500)
+  (joystick minimum (button 8))
+  (apply #x0000 #x0001 "button 1-8 press/release")
+  )
+
+ ("modifier 1 on"
+  (modifier #x0001 #x0001)
+  )
+
+ )
+
+(event
+ (motion
+  )
+
+ (press
+  (main-weapon
+   (#x0000 #x0000 "button 9/10 press/release")
+   )
+  (sub-weapon
+   (#x0000 #x0000 "button 1-8 press/release")
+   )
+  (lock-on
+   (#x0000 #x0000 "modifier 1 on")
+   )
+  )
+
+ (release
+  )
+
+ (lower-in
+  )
+
+ (lower-out
+  )
+
+ (upper-in
+  )
+
+ (upper-out
+  )
+
+ )

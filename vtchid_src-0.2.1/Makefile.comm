@@ -1,0 +1,108 @@
+# -*- mode: makefile -*-
+#
+# Makefile.comm  -- common definition
+#
+# $Id: Makefile.comm,v 1.6 2004/06/12 11:42:34 hos Exp $
+#
+
+BCCBASE = d:/borland/bcc55
+BCCINC = $(BCCBASE)/Include
+BCCBIN = $(BCCBASE)/Bin
+USE_BRCC = yes
+
+CC = gcc -mno-cygwin
+DLLTOOL = dlltool
+RM = rm -f
+WINDRES = windres
+BRCC = $(BCCBIN)/brcc32
+INSTALL = install -p
+ZIP = zip
+GTAR = tar
+AR = ar
+
+
+DBG_CPPFLAGS = -DDBG=1
+DBG_CFLAGS = 
+
+DBG2_CPPFLAGS = -DDBG=2
+DBG2_CFLAGS = 
+
+OPTMZ_CPPFLAGS = 
+OPTMZ_CFLAGS = -O3 -fomit-frame-pointer
+
+COMM_INCLUDES =
+
+ifeq ($(DEBUG), yes)
+COMM_CPPFLAGS = $(DBG_CPPFLAGS)
+COMM_CFLAGS = -Wall $(DBG_CFLAGS) -g
+else
+ifeq ($(DEBUG), yes2)
+COMM_CPPFLAGS = $(DBG2_CPPFLAGS)
+COMM_CFLAGS = -Wall $(DBG2_CFLAGS) -g
+else
+COMM_CPPFLAGS = $(OPTMZ_CPPFLAGS)
+COMM_CFLAGS = -Wall $(OPTMZ_CFLAGS)
+endif
+endif
+
+COMM_LDFLAGS = 
+COMM_DLL_LDFLAGS = -shared
+COMM_SYS_LDFLAGS = -Wl,--subsystem,native:1.10 \
+                   -Wl,--image-base,0x10000 \
+                   -Wl,--file-alignment,0x1000 \
+                   -Wl,--section-alignment,0x1000 \
+                   -Wl,--entry,_DriverEntry@8 \
+                   -mdll -nostartfiles -nostdlib
+
+INCLUDES = $(COMM_INCLUDES) $(TARGET_INCLUDES)
+CPPFLAGS = $(COMM_CPPFLAGS) $(INCLUDES)
+CFLAGS = $(COMM_CFLAGS) $(TARGET_CFLAGS)
+LDFLAGS = $(COMM_LDFLAGS) $(TARGET_LDFLAGS)
+DLL_LDFLAGS = $(LDFLAGS) $(COMM_DLL_LDFLAGS) $(TARGET_DLL_LDFLAGS)
+SYS_LDFLAGS = $(LDFLAGS) $(COMM_SYS_LDFLAGS) $(TARGET_SYS_LDFLAGS)
+
+DDK_DIR = /usr/include/w32api/ddk
+DDK_INCLUDES = -I$(DDK_DIR)
+
+MAIN_TARGET_NAME = vtchid
+
+all:
+
+debug:
+	$(MAKE) all DEBUG=yes
+
+debug2:
+	$(MAKE) all DEBUG=yes2
+
+.SUFFIXES: .rc .res .prc .def .a .dll .sys
+
+%.a: %.def
+	$(DLLTOOL) -l $@ --input-def $< --kill-at
+
+%.exe:
+	$(CC) $(LDFLAGS) $^ $(LDLIBS) -o $@
+
+%.dll:
+	$(CC) $(DLL_LDFLAGS) $^ $(LDLIBS) -o $@
+
+%.sys:
+	$(CC) $(SYS_LDFLAGS) -Wl,--base-file,base.tmp -o 1st.tmp $^ $(LDLIBS)
+	-$(RM) 1st.tmp
+	$(DLLTOOL) --dllname $@ --base-file base.tmp --output-exp exp.tmp
+	-$(RM) base.tmp
+	$(CC) $(SYS_LDFLAGS) -Wl,exp.tmp -o $@ $^ $(LDLIBS)
+	-$(RM) exp.tmp
+
+%.o: %.res
+	$(WINDRES) -o $@ $<
+
+ifeq ($(USE_BRCC), yes)
+%.res: %.rc
+	$(BRCC) -i$(BCCINC) -fo$@ $<
+else
+%.o: %.rc
+	$(WINDRES) -DNO_MBSTR -o $@ $<
+endif
+
+%.a:
+	$(AR) crs $@ $^

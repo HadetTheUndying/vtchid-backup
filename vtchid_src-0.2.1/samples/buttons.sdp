@@ -1,0 +1,123 @@
+;;;; -*- coding: utf-8; -*-
+;;;; S-expression Device Profile
+
+(profile
+ (name . "buttons")
+ )
+
+(parameter
+ (button
+  (threshold . #x80)
+  )
+
+ (axis
+  (lower-threshold . #x10)
+  (upper-threshold . #xef)
+  )
+
+ (modifier
+  (initial . #x0000)
+  )
+
+ (light
+  (auto . 1)
+  (slowly-off-speed . 20)
+  )
+ )
+
+(action-list
+ ("button 1 press"
+  (joystick maximum (button 1))
+  )
+
+ ("button 1 release"
+  (joystick minimum (button 1))
+  )
+
+ ("button 2 press"
+  (joystick maximum (button 2))
+  )
+
+ ("button 2 release"
+  (joystick minimum (button 2))
+  )
+
+ ("button 3 press"
+  (joystick maximum (button 3))
+  )
+
+ ("button 3 release"
+  (joystick minimum (button 3))
+  )
+
+ ("button 4 press"
+  (joystick maximum (button 4))
+  )
+
+ ("button 4 release"
+  (joystick minimum (button 4))
+  )
+
+ ("button 5 press"
+  (joystick maximum (button 5))
+  )
+
+ ("button 5 release"
+  (joystick minimum (button 5))
+  )
+
+ )
+
+(event
+ (motion
+  )
+
+ (press
+  (main-weapon
+   (#x0000 #x0000 "button 1 press")
+   )
+  (sub-weapon
+   (#x0000 #x0000 "button 2 release")
+   )
+  (f1
+   (#x0000 #x0000 "button 3 press")
+   )
+  (f2
+   (#x0000 #x0000 "button 3 release")
+   )
+  )
+
+ (release
+  (main-weapon
+   (#x0000 #x0000 "button 1 release")
+   )
+  (sub-weapon
+   (#x0000 #x0000 "button 2 press")
+   )
+  )
+
+ (lower-in
+  (rotation-lever
+   (#x0000 #x0000 "button 4 press")
+   )
+  )
+
+ (lower-out
+  (rotation-lever
+   (#x0000 #x0000 "button 4 release")
+   )
+  )
+
+ (upper-in
+  (rotation-lever
+   (#x0000 #x0000 "button 5 press")
+   )
+  )
+
+ (upper-out
+  (rotation-lever
+   (#x0000 #x0000 "button 5 release")
+   )
+  )
+
+ )

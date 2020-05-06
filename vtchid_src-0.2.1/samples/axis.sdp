@@ -1,0 +1,102 @@
+;;;; -*- coding: utf-8; -*-
+;;;; S-expression Device Profile
+
+(profile
+ (name . "axis")
+ )
+
+(parameter
+ (button
+  (threshold . #x80)
+  )
+
+ (axis
+  (lower-threshold . #x10)
+  (upper-threshold . #xef)
+  )
+
+ (modifier
+  (initial . #x0000)
+  )
+
+ (light
+  (auto . 1)
+  (slowly-off-speed . 20)
+  )
+ )
+
+(action-list
+ ("axis X through"
+  (joystick through x)
+  )
+
+ ("axis Y through"
+  (joystick through y)
+  )
+
+ ("axis RX reverse"
+  (joystick reverse rx)
+  )
+
+ ("axis RY reverse"
+  (joystick reverse ry)
+  )
+
+ ("axis Slider"
+  (joystick ratio slider 127 255 64)
+  )
+
+ ("axis RZ left"
+  (joystick ratio rz -128 255 128)
+  )
+
+ ("axis RZ right"
+  (joystick ratio rz 127 255 128)
+  )
+
+ )
+
+(event
+ (motion
+  (aiming-lever-x
+   (#x0000 #x0000 "axis X through")
+   )
+  (aiming-lever-y
+   (#x0000 #x0000 "axis Y through")
+   )
+  (sight-change-x
+   (#x0000 #x0000 "axis RX reverse")
+   )
+  (sight-change-y
+   (#x0000 #x0000 "axis RY reverse")
+   )
+  (rotation-lever
+   (#x0000 #x0000 "axis Slider")
+   )
+  (foot-pedal-left
+   (#x0000 #x0000 "axis RZ left")
+   )
+  (foot-pedal-right
+   (#x0000 #x0000 "axis RZ right")
+   )
+  )
+
+ (press
+  )
+
+ (release
+  )
+
+ (lower-in
+  )
+
+ (lower-out
+  )
+
+ (upper-in
+  )
+
+ (upper-out
+  )
+
+ )

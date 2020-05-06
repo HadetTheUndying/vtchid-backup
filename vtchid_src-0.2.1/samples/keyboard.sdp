@@ -1,0 +1,84 @@
+;;;; -*- coding: utf-8; -*-
+;;;; S-expression Device Profile
+
+(profile
+ (name . "keyboard")
+ )
+
+(parameter
+ (button
+  (threshold . #x80)
+  )
+
+ (axis
+  (lower-threshold . #x10)
+  (upper-threshold . #xef)
+  )
+
+ (modifier
+  (initial . #x0000)
+  )
+
+ (light
+  (auto . 1)
+  (slowly-off-speed . 20)
+  )
+ )
+
+(action-list
+ ("keyboard A press"
+  (keyboard press #x0004)
+  )
+
+ ("keyboard A release"
+  (keyboard release #x0004)
+  )
+
+ ("keyboard A/B/C"
+  (keyboard press #x0004)
+  (delay 100)
+  (keyboard release #x0004)
+  (delay 100)
+  (keyboard press #x0005)
+  (delay 100)
+  (keyboard release #x0005)
+  (delay 100)
+  (keyboard press #x0006)
+  (delay 100)
+  (keyboard release #x0006)
+  )
+
+ )
+
+(event
+ (motion
+  )
+
+ (press
+  (main-weapon
+   (#x0000 #x0000 "keyboard A press")
+   )
+  (sub-weapon
+   (#x0000 #x0000 "keyboard A/B/C")
+   )
+  )
+
+ (release
+  (main-weapon
+   (#x0000 #x0000 "keyboard A release")
+   )
+  )
+
+ (lower-in
+  )
+
+ (lower-out
+  )
+
+ (upper-in
+  )
+
+ (upper-out
+  )
+
+ )

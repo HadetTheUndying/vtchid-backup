@@ -1,0 +1,62 @@
+;;;; -*- coding: utf-8; -*-
+;;;; S-expression Device Profile
+
+(profile
+ (name . "delay")
+ )
+
+(parameter
+ (button
+  (threshold . #x80)
+  )
+
+ (axis
+  (lower-threshold . #x10)
+  (upper-threshold . #xef)
+  )
+
+ (modifier
+  (initial . #x0000)
+  )
+
+ (light
+  (auto . 1)
+  (slowly-off-speed . 20)
+  )
+ )
+
+(action-list
+ ("button 1 press/release"
+  (joystick maximum (button 1))
+  (delay 1000)
+  (joystick minimum (button 1))
+  )
+
+ )
+
+(event
+ (motion
+  )
+
+ (press
+  (main-weapon
+   (#x0000 #x0000 "button 1 press/release")
+   )
+  )
+
+ (release
+  )
+
+ (lower-in
+  )
+
+ (lower-out
+  )
+
+ (upper-in
+  )
+
+ (upper-out
+  )
+
+ )

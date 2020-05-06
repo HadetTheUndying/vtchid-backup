@@ -1,0 +1,76 @@
+;
+; vtchid.inf  -- install information
+;
+; $Id: vtchid.inf,v 1.11 2004/06/14 14:02:08 hos Exp $
+;
+
+[version]
+Signature = "$Chicago$"
+Class = HIDClass
+ClassGUID = {745a17a0-74d3-11d0-b6fe-00a0c90f57da}
+Provider = %vtchid.Provider%
+DriverVer = 06/14/2004,0.2.1
+
+[SourceDisksNames]
+1 = "vtchid directory",,,
+
+[SourceDisksFiles.x86]
+vtchid.sys = 1
+
+[DestinationDirs]
+vtchid.Files.Driver = 12
+vtchid.Files.Ctrl = 11
+
+[Manufacturer]
+%vtchid.Provider% = vtchid
+
+[vtchid]
+%vtchid.vtc% = vtchid.Install, USB\%vtchid.vtc.VID.PID%
+
+[vtchid.Install]
+CopyFiles = vtchid.Files.Driver, vtchid.Files.Ctrl
+
+[vtchid.Install.NTx86]
+CopyFiles = vtchid.Files.Driver, vtchid.Files.Ctrl
+AddReg = vtchid.AddReg.Ctrl
+
+[vtchid.Files.Driver]
+vtchid.sys,,,%COPYFLG_NOSKIP%
+
+[vtchid.Files.Ctrl]
+vtchidcpl.dll
+
+[vtchid.AddReg.Ctrl]
+HKCR,CLSID\%vtchid.Ctrl.CLSID%,,,%vtchid.Ctrl.Name%
+HKCR,CLSID\%vtchid.Ctrl.CLSID%\InProcServer32,,,%11%\vtchidcpl.dll
+HKCR,CLSID\%vtchid.Ctrl.CLSID%\InProcServer32,ThreadingModel,,"Apartment"
+HKLM,%PropOEMKey%\%vtchid.vtc.VID.PID%,ConfigCLSID,,%vtchid.Ctrl.CLSID%
+
+[vtchid.Install.NTx86.Services]
+AddService = vtchid, 0x00000002, vtchid.Service
+
+[vtchid.Service]
+DisplayName    = %vtchid.Service.Name%
+ServiceType    = 1 ; SERVICE_KERNEL_DRIVER
+StartType      = 3 ; SERVICE_DEMAND_START
+ErrorControl   = 1 ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\vtchid.sys
+
+
+[Strings]
+vtchid.Provider = "noname"
+vtchid.vtc = "VT Controller"
+vtchid.Service.Name = "VT Controller HID driver"
+vtchid.Ctrl.Name = "Control Panel for VT Controller HID driver"
+vtchid.Ctrl.CLSID = "{AEC7D9E1-1B01-4009-BF71-8D45CAD1BECD}"
+PropOEMKey = "SYSTEM\CurrentControlSet\Control\MediaProperties\PrivateProperties\Joystick\OEM"
+vtchid.vtc.VID.PID = "VID_0A7B&PID_D000"
+
+[Strings.0411]
+vtchid.Provider = "noname"
+vtchid.vtc = "ìSãRÉRÉìÉgÉçÅ[Éâ"
+vtchid.Service.Name = "VT Controller HID driver"
+vtchid.Ctrl.Name = "Control Panel for VT Controller HID driver"
+vtchid.Ctrl.CLSID = "{AEC7D9E1-1B01-4009-BF71-8D45CAD1BECD}"
+PropOEMKey = "SYSTEM\CurrentControlSet\Control\MediaProperties\PrivateProperties\Joystick\OEM"
+vtchid.vtc.VID.PID = "VID_0A7B&PID_D000"

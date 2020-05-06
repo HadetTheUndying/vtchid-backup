@@ -1,0 +1,95 @@
+;;;; -*- coding: utf-8; -*-
+;;;; S-expression Device Profile
+
+(profile
+ (name . "mouse")
+ )
+
+(parameter
+ (button
+  (threshold . #x80)
+  )
+
+ (axis
+  (lower-threshold . #x10)
+  (upper-threshold . #xef)
+  )
+
+ (modifier
+  (initial . #x0000)
+  )
+
+ (light
+  (auto . 1)
+  (slowly-off-speed . 20)
+  )
+ )
+
+(action-list
+ ("mouse X"
+  (mouse ratio x 41 255 107)
+  )
+
+ ("mouse Y"
+  (mouse ratio y 41 255 107)
+  )
+
+ ("mouse 1 press"
+  (mouse maximum button-1)
+  )
+
+ ("mouse 1 release"
+  (mouse minimum button-1)
+  )
+
+ ("mouse 2 press"
+  (mouse maximum button-2)
+  )
+
+ ("mouse 2 release"
+  (mouse minimum button-2)
+  )
+
+ )
+
+(event
+ (motion
+  (sight-change-x
+   (#x0000 #x0000 "mouse X")
+   )
+  (sight-change-y
+   (#x0000 #x0000 "mouse Y")
+   )
+  )
+
+ (press
+  (main-weapon
+   (#x0000 #x0000 "mouse 1 press")
+   )
+  (sub-weapon
+   (#x0000 #x0000 "mouse 2 press")
+   )
+  )
+
+ (release
+  (main-weapon
+   (#x0000 #x0000 "mouse 1 release")
+   )
+  (sub-weapon
+   (#x0000 #x0000 "mouse 2 release")
+   )
+  )
+
+ (lower-in
+  )
+
+ (lower-out
+  )
+
+ (upper-in
+  )
+
+ (upper-out
+  )
+
+ )
